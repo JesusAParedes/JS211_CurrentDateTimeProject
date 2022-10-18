@@ -15,12 +15,22 @@ const displayDate = () => {
  
 
 // Write a JavaScript program to convert a number to a string.
+let num1 = 20
 
+num1.toString()
 
+console.log(num1.toString())
 
 // Write a JavaScript program to convert a string to the number.
 
 
+const strToNum = (str) => {
+  return parseInt(str)
+}
+
+strToNum()
+
+// console.log(str.toString())
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
   // * Boolean
@@ -30,21 +40,64 @@ const displayDate = () => {
   // * NaN
   // * String
   
+let boo = true
+let no = null
+let nah = undefined
+let newNumber = 30
+let notaNumber = NaN
+let anotherString = "words"
 
+console.log(typeof boo)
+
+console.log(typeof no)
+
+console.log(typeof nah)
+
+console.log(typeof newNumber)
+
+console.log(typeof notaNumber)
+
+console.log(typeof anotherString)
   
 // Write a JavaScript program that adds 2 numbers together.
 
+const sumTwo = (x,y) => {
+  x + y
+  return(x+y)
+} 
+
+sumTwo()
 
 
 // Write a JavaScript program that runs only when 2 things are true.
 
+const andTrue = (a, b, c) => {
+  if(a === c && b < a) {
+    return true
+  } else return false
+}
 
+andTrue()
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
 
+const oneTrue = (d, e, f) => {
+  if(d === e || f > e) {
+    return true
+  } else return false
+}
 
+oneTrue()
 
 // Write a JavaScript program that runs when both things are not true.  
+
+const notTrue = (g, h, i) => {
+  if(g + h && i === h) {
+    return false
+  } else return true
+}
+
+notTrue()
 
 // ***************************
 //         PART TWO
