@@ -15,11 +15,24 @@ const displayDate = () => {
  
 
 // Write a JavaScript program to convert a number to a string.
-let num1 = 20
 
-num1.toString()
 
-console.log(num1.toString())
+const numToString = (num1) => {
+  return String(num1)
+
+}
+
+numToString()
+
+const stringForm = document.getElementById("form") 
+
+form.addEventListener("submit",e => {
+  e.preventDefault()
+  
+  let num1 = document.getElementById("number").value
+  console.log(String(num1))
+  document.getElementById("numberToString").innerHTML = "The string is " + numToString(num1);
+}) 
 
 // Write a JavaScript program to convert a string to the number.
 
@@ -30,7 +43,16 @@ const strToNum = (str) => {
 
 strToNum()
 
-// console.log(str.toString())
+const parseForm = document.getElementById("formToNumber") 
+
+parseForm.addEventListener("submit",e => {
+  e.preventDefault()
+  
+  let str = document.getElementById("string").value
+  console.log(parseInt(str))
+  document.getElementById("stringToNumber").innerHTML = "The number is " + strToNum(str);
+}) 
+
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
   // * Boolean
@@ -40,12 +62,24 @@ strToNum()
   // * NaN
   // * String
   
+let testArray = [true, null, undefined, 30, NaN, 'words']
+
 let boo = true
 let no = null
 let nah = undefined
 let newNumber = 30
 let notaNumber = NaN
 let anotherString = "words"
+
+const diffDataTypes = (testArray) => {
+  // for (let i = 0; i < testArray.length; i++) {
+  //   const testArray = testArray[i];
+    
+  // }
+  return typeof testArray
+}
+
+diffDataTypes()
 
 console.log(typeof boo)
 
@@ -62,12 +96,23 @@ console.log(typeof anotherString)
 // Write a JavaScript program that adds 2 numbers together.
 
 const sumTwo = (x,y) => {
-  x + y
-  return(x+y)
+  parseInt(x) + parseInt(y)
+  return(parseInt(x) + parseInt(y))
 } 
 
 sumTwo()
 
+const formAddition = document.getElementById("formAddNumber") 
+
+formAddition.addEventListener("submit",e => {
+  e.preventDefault()
+  
+  let x = document.getElementById("addOne").value
+  let y = document.getElementById("addTwo").value
+
+  
+  document.getElementById("addNumbers").innerHTML = "My total is " + sumTwo(x,y);
+}) 
 
 // Write a JavaScript program that runs only when 2 things are true.
 
@@ -92,9 +137,9 @@ oneTrue()
 // Write a JavaScript program that runs when both things are not true.  
 
 const notTrue = (g, h, i) => {
-  if(g + h && i === h) {
-    return false
-  } else return true
+  if(g !== h && i !== h) {
+    return true
+  } else return false
 }
 
 notTrue()
