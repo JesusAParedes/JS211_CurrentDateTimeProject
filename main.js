@@ -90,7 +90,7 @@ formDataTypes.addEventListener("submit",e => {
   
 
   
-  document.getElementById("dataTypes").innerHTML = "My total is " + sumTwo(testArray);
+  document.getElementById("dataTypes").innerHTML = "My data type is " + diffDataTypes(typeof testArray);
 }) 
 
 console.log(typeof boo)
