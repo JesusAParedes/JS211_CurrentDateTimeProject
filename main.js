@@ -116,33 +116,69 @@ formAddition.addEventListener("submit",e => {
 
 // Write a JavaScript program that runs only when 2 things are true.
 
-const andTrue = (a, b, c) => {
-  if(a === c && b < a) {
+const andTrue = (a, b) => {
+  if(a && b ) {
     return true
-  } else return false
+  } 
 }
 
 andTrue()
 
+const formTwoTrue = document.getElementById("formBothTrue") 
+
+formTwoTrue.addEventListener("submit",e => {
+  e.preventDefault()
+  
+  let a = document.getElementById("thingOne").value
+  let b = document.getElementById("thingTwo").value
+
+  
+  document.getElementById("checkBothTrue").innerHTML = "It's " + andTrue(a,b);
+}) 
+
 // Write a JavaScript program that runs when 1 of 2 things are true.
 
-const oneTrue = (d, e, f) => {
-  if(d === e || f > e) {
+const oneTrue = (d, f) => {
+  if(d || f) {
     return true
-  } else return false
+  } 
 }
 
 oneTrue()
 
+const formSingleTrue = document.getElementById("formSingleTrue") 
+
+formSingleTrue.addEventListener("submit",e => {
+  e.preventDefault()
+  
+  let d = document.getElementById("thingThree").value
+  let f = document.getElementById("thingFour").value
+
+  
+  document.getElementById("checkSingleTrue").innerHTML = "It's " + oneTrue(d,f);
+}) 
+
 // Write a JavaScript program that runs when both things are not true.  
 
-const notTrue = (g, h, i) => {
-  if(g !== h && i !== h) {
+const notTrue = (g, h) => {
+  if(!g && !h) {
     return true
-  } else return false
+  } 
 }
 
 notTrue()
+
+const formNotTrue = document.getElementById("formBothNotTrue") 
+
+formNotTrue.addEventListener("submit",e => {
+  e.preventDefault()
+  
+  let g = document.getElementById("thingFive").value
+  let h = document.getElementById("thingSix").value
+
+  
+  document.getElementById("checkBothNotTrue").innerHTML = "It's " + notTrue(g,h);
+}) 
 
 // ***************************
 //         PART TWO
