@@ -81,6 +81,18 @@ const diffDataTypes = (testArray) => {
 
 diffDataTypes()
 
+const formDataTypes = document.getElementById("formDataTypes") 
+
+formDataTypes.addEventListener("submit",e => {
+  e.preventDefault()
+  
+  let testArray = document.getElementById("data").value
+  
+
+  
+  document.getElementById("dataTypes").innerHTML = "My total is " + sumTwo(testArray);
+}) 
+
 console.log(typeof boo)
 
 console.log(typeof no)
