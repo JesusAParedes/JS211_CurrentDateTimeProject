@@ -64,6 +64,8 @@ parseForm.addEventListener("submit",e => {
   
 let testArray = [true, null, undefined, 30, NaN, 'words']
 
+
+
 let boo = true
 let no = null
 let nah = undefined
@@ -75,6 +77,9 @@ const diffDataTypes = (testArray) => {
   // for (let i = 0; i < testArray.length; i++) {
   //   const testArray = testArray[i];
     
+  // }
+  // if(testArray[0] = boolean) {
+  //   return "I'm a boolean"
   // }
   return typeof testArray
 }
