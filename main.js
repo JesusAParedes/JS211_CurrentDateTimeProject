@@ -62,7 +62,7 @@ parseForm.addEventListener("submit",e => {
   // * NaN
   // * String
   
-let testArray = [true, null, undefined, 30, NaN, 'words']
+let testArray = []
 
 
 
@@ -74,14 +74,29 @@ let notaNumber = NaN
 let anotherString = "words"
 
 const diffDataTypes = (testArray) => {
-  // for (let i = 0; i < testArray.length; i++) {
-  //   const testArray = testArray[i];
-    
-  // }
-  // if(testArray[0] = boolean) {
-  //   return "I'm a boolean"
-  // }
-  return typeof testArray
+  if(testArray === 'true' || testArray === 'false'){
+  return " boolean"
+}
+
+  if(testArray === 'null') {
+    return " null"
+  }
+  
+  if(testArray === 'undefined'){
+    return " undefined"
+  }
+  
+  if(testArray === ''){
+    return "NaN"
+  }
+
+  if(testArray){
+    parseInt(testArray)
+    return "Number"
+  } 
+
+  else return "String"
+
 }
 
 diffDataTypes()
@@ -92,10 +107,10 @@ formDataTypes.addEventListener("submit",e => {
   e.preventDefault()
   
   let testArray = document.getElementById("data").value
-  
+  // let newArray = parseInt(testArray)
 
   
-  document.getElementById("dataTypes").innerHTML = "My data type is " + diffDataTypes(typeof testArray);
+  document.getElementById("dataTypes").innerHTML = "My data type is " + diffDataTypes(testArray);
 }) 
 
 console.log(typeof boo)
