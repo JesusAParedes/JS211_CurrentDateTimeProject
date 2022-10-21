@@ -74,10 +74,11 @@ let notaNumber = NaN
 let anotherString = "words"
 
 const diffDataTypes = (testArray) => {
+  
   if(testArray === 'true' || testArray === 'false'){
-  return " boolean"
-}
-
+    return " boolean"
+  }
+  
   if(testArray === 'null') {
     return " null"
   }
@@ -86,16 +87,12 @@ const diffDataTypes = (testArray) => {
     return " undefined"
   }
   
-  if(testArray === ''){
+
+  if(isNaN(parseInt(testArray)) === true){
     return "NaN"
-  }
-
-  if(testArray){
-    parseInt(testArray)
-    return "Number"
-  } 
-
-  else return "String"
+  } else if(isNaN(parseInt(testArray)) === false){
+    return "Number"}
+    else return "String"
 
 }
 
@@ -106,8 +103,7 @@ const formDataTypes = document.getElementById("formDataTypes")
 formDataTypes.addEventListener("submit",e => {
   e.preventDefault()
   
-  let testArray = document.getElementById("data").value
-  // let newArray = parseInt(testArray)
+  let testArray = document.getElementById("data").value.trim().toLowerCase()
 
   
   document.getElementById("dataTypes").innerHTML = "My data type is " + diffDataTypes(testArray);
