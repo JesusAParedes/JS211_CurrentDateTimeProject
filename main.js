@@ -86,13 +86,15 @@ const diffDataTypes = (testArray) => {
   if(testArray === 'undefined'){
     return " undefined"
   }
-  
 
+  if(testArray === 'string'){
+    return "String"
+  }
+  
   if(isNaN(parseInt(testArray)) === true){
     return "NaN"
   } else if(isNaN(parseInt(testArray)) === false){
     return "Number"}
-    else return "String"
 
 }
 
