@@ -64,8 +64,6 @@ parseForm.addEventListener("submit",e => {
   
 let testArray = []
 
-
-
 let boo = true
 let no = null
 let nah = undefined
@@ -76,18 +74,18 @@ let anotherString = "words"
 const diffDataTypes = (testArray) => {
   
   if(testArray === 'true' || testArray === 'false'){
-    return " boolean"
+    return " Boolean"
   }
   
   if(testArray === 'null') {
-    return " null"
+    return " Null"
   }
   
   if(testArray === 'undefined'){
-    return " undefined"
+    return " Undefined"
   }
 
-  if(testArray === 'string'){
+  if(testArray === 'string' || testArray === ''){
     return "String"
   }
   
